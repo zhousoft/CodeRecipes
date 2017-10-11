@@ -14,7 +14,7 @@ local redis_script = [[
     end
 ]]
 
-
+-- 通过节本hash执行redis-lua脚本，进行限流
 local function limit_by_redis_script(rule, limit_type, script_hash)
     local redis_host = context.config.redis_server.host --从全局变量中读取配置
     local redis_port = context.config.redis_server.port
