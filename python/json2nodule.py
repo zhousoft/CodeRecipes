@@ -43,9 +43,9 @@ def dic_to_lua_str(data,layer=0):
             data_count += 1
             lua_str += space_str(layer+1)
             if type(k) is types.IntType:
-                lua_str += '[' + str(k) + ']'
+                lua_str += "['" + str(k) + "']"
             else:
-                lua_str += k 
+                lua_str += "['" + k + "']" 
             lua_str += ' = '
             try:
                 lua_str += dic_to_lua_str(v,layer +1)
